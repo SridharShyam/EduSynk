@@ -7,11 +7,13 @@
 
 ## 📌 Problem Statement (PS)
 
-In modern higher education and self-driven learning environments, students face significant barriers when attempting to master new skills or overcome complex subject challenges:
+**Core Challenge**: *Student Skill Exchange — Build a web platform where students can teach and learn skills from each other.*
+
+In modern higher education and self-driven learning environments, students face significant structural barriers when attempting to master new skills or overcome complex subject challenges:
 
 1. **Accessibility of Tailored Mentorship**: Finding direct, 1-on-1 mentorship for specific subject challenges or specialized skill sets is difficult within conventional academic setups.
 2. **Passive Learning Bottlenecks**: Traditional video courses lack interactive feedback, real-time code reviews, or bilateral accountability.
-3. **Unutilized Campus Talent**: Millions of students possess high proficiency in specific domains (e.g., Python, Graphic Design, Web Development, Calculus) but lack a platform to trade their expertise for skills they need to learn (e.g., UI/UX, Data Science, Public Speaking).
+3. **Unutilized Campus Talent**: Millions of students possess high proficiency in specific domains (e.g., Python, Graphic Design, Web Development, Calculus) but lack a structured platform to trade their expertise for skills they need to learn (e.g., UI/UX, Data Science, Public Speaking).
 4. **Asymmetric Skill Matching**: Finding another student who specifically needs what you teach *and* offers what you want to learn is nearly impossible through manual networking or bulletin boards.
 
 ---
