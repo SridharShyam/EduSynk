@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -151,11 +152,29 @@ activemq-data/
 .env
 .envrc
 .venv
+=======
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Production builds
+dist/
+build/
+
+# Python cache & environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+>>>>>>> 737ef26 (Initial commit: EduSynk Full-Stack Python FastAPI & React Peer Skill Exchange Platform)
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+<<<<<<< HEAD
 
 # Spyder project settings
 .spyderproject
@@ -216,3 +235,32 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+=======
+.pytest_cache/
+
+# Environment secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# System & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Prompt & temporary text files
+prompt.txt
+prompt2.txt
+prompt3.txt
+prompt4.txt
+cross valid.txt
+>>>>>>> 737ef26 (Initial commit: EduSynk Full-Stack Python FastAPI & React Peer Skill Exchange Platform)
