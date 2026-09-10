@@ -473,6 +473,43 @@ export const AppProvider = ({ children }) => {
     addToast("Profile updated successfully!", "success");
   };
 
+  const login = async (email, password) => {
+    const data = await ApiClient.login(email, password);
+    if (data && data.token) {
+      localStorage.setItem('edusynk_jwt_token', data.token);
+      if (data.user) {
+        const uId = data.user.userId || data.user.id;
+        setCurrentUserId(uId);
+        setStudents(prev => {
+          const exists = prev.some(s => (s.userId || s.id) === uId);
+          return exists ? prev : [data.user, ...prev];
+        });
+      }
+      addToast(`Welcome back, ${data.user?.name || 'Student'}!`, 'success');
+      return data;
+    }
+  };
+
+  const register = async (userData) => {
+    const data = await ApiClient.register(userData);
+    if (data && data.token) {
+      localStorage.setItem('edusynk_jwt_token', data.token);
+      if (data.user) {
+        const uId = data.user.userId || data.user.id;
+        setCurrentUserId(uId);
+        setStudents(prev => [data.user, ...prev]);
+      }
+      addToast('Account created successfully!', 'success');
+      return data;
+    }
+  };
+
+  const logout = () => {
+    localStorage.removeItem('edusynk_jwt_token');
+    localStorage.removeItem('skillnexus_jwt_token');
+    addToast('Signed out of session.', 'info');
+  };
+
   const resetDemoData = () => {
     setSkills(INITIAL_SKILLS);
     setStudents(INITIAL_STUDENTS);
@@ -523,6 +560,9 @@ export const AppProvider = ({ children }) => {
       upvoteSkillRequest,
       submitSafetyReport,
       updateCurrentUserProfile,
+      login,
+      register,
+      logout,
       resetDemoData
     }}>
       {children}

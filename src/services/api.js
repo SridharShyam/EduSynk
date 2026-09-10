@@ -1,22 +1,19 @@
 const API_BASE_URL = 'http://localhost:5000/api/v1';
 
 class ApiClient {
-  static getAuthHeader(userId) {
-    const token = localStorage.getItem('skillnexus_jwt_token');
+  static getAuthHeader() {
+    const token = localStorage.getItem('edusynk_jwt_token') || localStorage.getItem('skillnexus_jwt_token');
     const headers = { 'Content-Type': 'application/json' };
     if (token) {
       headers['Authorization'] = `Bearer ${token}`;
     }
-    if (userId) {
-      headers['x-persona-user-id'] = userId;
-    }
     return headers;
   }
 
-  static async request(endpoint, options = {}, userId = null) {
+  static async request(endpoint, options = {}) {
     try {
       const url = `${API_BASE_URL}${endpoint}`;
-      const headers = this.getAuthHeader(userId);
+      const headers = this.getAuthHeader();
       const config = {
         ...options,
         headers: {

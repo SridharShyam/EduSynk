@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
+import { AuthModal } from './AuthModal';
 import { 
   Sparkles, 
   Compass, 
@@ -15,7 +16,8 @@ import {
   RotateCcw,
   LayoutDashboard,
   Zap,
-  Globe
+  Globe,
+  LogIn
 } from 'lucide-react';
 
 export const Navbar = () => {
@@ -32,11 +34,13 @@ export const Navbar = () => {
     t,
     activeTab, 
     setActiveTab,
+    logout,
     resetDemoData
   } = useApp();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [personaDropdownOpen, setPersonaDropdownOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
 
   // Calculate pending requests count for active user
@@ -286,6 +290,17 @@ export const Navbar = () => {
           </button>
 
 
+          {/* Sign In / JWT Auth Button */}
+          <button
+            onClick={() => setAuthModalOpen(true)}
+            className="btn-primary"
+            title="Sign In or Create Account"
+            style={{ padding: '6px 14px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: 6, borderRadius: 'var(--radius-full)' }}
+          >
+            <LogIn size={15} />
+            <span>Auth</span>
+          </button>
+
           {/* Reset Demo Data Button */}
           <button 
             onClick={resetDemoData} 
@@ -295,6 +310,8 @@ export const Navbar = () => {
           >
             <RotateCcw size={16} />
           </button>
+
+          <AuthModal isOpen={authModalOpen} onClose={() => setAuthModalOpen(false)} />
 
           {/* Mobile Hamburger Toggle */}
           <button 

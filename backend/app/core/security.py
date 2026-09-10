@@ -24,20 +24,14 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     return encoded_jwt
 
 async def get_current_user(
-    authorization: Optional[str] = Header(None),
-    x_persona_user_id: Optional[str] = Header(None)
+    authorization: Optional[str] = Header(None)
 ) -> dict:
-    """Extracts authenticated student from JWT token or fallback persona header"""
+    """Extracts authenticated student strictly from JWT token"""
     token = None
     if authorization and authorization.startswith("Bearer "):
         token = authorization.split(" ")[1]
         
     if not token:
-        if x_persona_user_id:
-            return {
-                "userId": x_persona_user_id,
-                "role": "admin" if x_persona_user_id == "admin" else "student"
-            }
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Authentication token required.",
@@ -49,7 +43,7 @@ async def get_current_user(
         return payload
     except jwt.PyJWTError:
         raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN,
+            status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid or expired token."
         )
 
