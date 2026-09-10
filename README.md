@@ -1,7 +1,7 @@
 # 🎓 EduSynk — Peer-to-Peer Student Skill Exchange Platform
 
 > **Empowering Students to Learn by Teaching.**  
-> EduSynk is a zero-cost, reciprocal peer-to-peer knowledge network that connects students to exchange academic and technical skills directly with fellow campus learners.
+> EduSynk is a reciprocal peer-to-peer knowledge network that connects students to exchange academic and technical skills directly with fellow campus learners.
 
 ---
 
@@ -9,7 +9,7 @@
 
 In modern higher education and self-driven learning environments, students face significant barriers when attempting to master new skills or overcome complex subject challenges:
 
-1. **High Cost of Premium Tutoring & Courses**: Paid online courses, private bootcamps, and professional tutoring are financially prohibitive for many university students.
+1. **Accessibility of Tailored Mentorship**: Finding direct, 1-on-1 mentorship for specific subject challenges or specialized skill sets is difficult within conventional academic setups.
 2. **Passive Learning Bottlenecks**: Traditional video courses lack interactive feedback, real-time code reviews, or bilateral accountability.
 3. **Unutilized Campus Talent**: Millions of students possess high proficiency in specific domains (e.g., Python, Graphic Design, Web Development, Calculus) but lack a platform to trade their expertise for skills they need to learn (e.g., UI/UX, Data Science, Public Speaking).
 4. **Asymmetric Skill Matching**: Finding another student who specifically needs what you teach *and* offers what you want to learn is nearly impossible through manual networking or bulletin boards.
@@ -18,7 +18,7 @@ In modern higher education and self-driven learning environments, students face 
 
 ## 💡 The Solution
 
-**EduSynk** solves these challenges by introducing a **Bilateral Reciprocal Skill Exchange Engine**. Instead of relying on monetary transactions, EduSynk operates on a **peer skill barter system**:
+**EduSynk** solves these challenges by introducing a **Bilateral Reciprocal Skill Exchange Engine**. The platform operates on a **peer skill exchange model**:
 
 - **Give & Take Dynamic**: A student who excels at **Python Programming** but wants to learn **UI/UX Design** is automatically paired with a student who excels at **UI/UX Design** and wants to learn **Python**.
 - **Interactive Collaborative Workspaces**: Integrated exchange boards feature real-time video call integrations, shared code/design document pads, session progress trackers, and structured milestone logs.
