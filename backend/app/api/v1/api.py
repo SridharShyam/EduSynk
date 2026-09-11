@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.v1.endpoints import auth, users, skills, search, synergy, exchanges, sessions, reviews, ai
+from app.api.v1.endpoints import auth, users, skills, search, synergy, exchanges, sessions, reviews, ai, websocket
 
 api_router = APIRouter()
 
@@ -12,6 +12,7 @@ api_router.include_router(exchanges.router, prefix="/exchanges", tags=["exchange
 api_router.include_router(sessions.router, prefix="/sessions", tags=["sessions"])
 api_router.include_router(reviews.router, prefix="/reviews", tags=["reviews"])
 api_router.include_router(ai.router, prefix="/ai", tags=["ai"])
+api_router.include_router(websocket.router, tags=["websocket"])
 
 @api_router.get("/health")
 async def health_check():
